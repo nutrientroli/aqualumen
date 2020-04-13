@@ -6,7 +6,7 @@ draft: false
 menu:
   main:
     title: "Profesionales"
-    weight: 2
+    weight: 1
 
 title_banner: "Profesionales"
 text_banner: "" 

@@ -6,7 +6,7 @@ draft: false
 menu:
   main:
     title: "Contacto"
-    weight: 6
+    weight: 7
 
 title_banner: "Contacto"
 text_banner: "" 

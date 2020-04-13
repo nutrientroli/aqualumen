@@ -6,7 +6,7 @@ draft: false
 menu:
   main:
     title: "Terapias"
-    weight: 1
+    weight: 2
 
 title_banner: "Terapias"
 text_banner: "" 
