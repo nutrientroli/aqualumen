@@ -1,6 +1,14 @@
 ---
 title: "Terapias"
 date: 2020-04-12T18:51:24+02:00
-draft: true
+draft: false
+
+menu:
+  main:
+    title: "Terapias"
+    weight: 1
+
+title_banner: "Terapias"
+text_banner: "" 
 ---
 

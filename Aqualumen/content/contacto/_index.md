@@ -1,6 +1,14 @@
 ---
 title: "Contacto"
 date: 2020-04-12T18:50:39+02:00
-draft: true
+draft: false
+
+menu:
+  main:
+    title: "Contacto"
+    weight: 6
+
+title_banner: "Contacto"
+text_banner: "" 
 ---
 
