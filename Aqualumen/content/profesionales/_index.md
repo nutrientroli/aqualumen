@@ -5,10 +5,10 @@ draft: false
 
 menu:
   main:
-    title: "Profesionales"
     weight: 1
 
-title_banner: "Profesionales"
-text_banner: "" 
+banner:
+  title: "Profesionales"
+  text: "" 
 ---
 

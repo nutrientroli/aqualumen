@@ -5,10 +5,10 @@ draft: false
 
 menu:
   main:
-    title: "Cursos"
     weight: 3
 
-title_banner: "Cursos"
-text_banner: "" 
+banner:
+  title: "Cursos"
+  text: "" 
 ---
 

@@ -5,10 +5,10 @@ draft: false
 
 menu:
   main:
-    title: "Terapias"
     weight: 2
 
-title_banner: "Terapias"
-text_banner: "" 
+banner:
+  title: "Terapias"
+  text: "" 
 ---
 
