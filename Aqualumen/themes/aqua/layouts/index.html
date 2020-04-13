@@ -4,59 +4,49 @@
         <div class="jumbotron">
         <div class="container">
             <div class="row">
-            <div class="col-md-6">
-                <img class="img-fluid mx-auto d-block" src="img/logo.png" width="75%">
-            </div>
-            <div class="col-md-6">
-                <h1>Despierta tu sabiduria interna, mejora tu calidad de vida.</h1>
-                <p class="lead text-muted">Con el acompañamiento apropiado, en el momento adecuado mejora tu vitalidad física, tu claridad mental y eleva tu consciencia. Conoce tus capacidades innatas y naturales y disfruta de la vida.</p>
-                <p>
-                <a href="#" class="btn btn-primary my-2">Encuentra tu profesional &raquo;</a>
-                </p>
-            </div>
+                <div class="col-md-6">
+                    <img class="img-fluid mx-auto d-block" src="{{ .Params.banner.image }}" width="75%">
+                </div>
+                <div class="col-md-6">
+                    <h1>{{ .Params.banner.title }}</h1>
+                    <p class="lead text-muted">{{ .Params.banner.text }}</p>
+                    <p>
+                        <a href="#" class="btn btn-primary my-2">{{ .Params.banner.action }} &raquo;</a>
+                    </p>
+                </div>
             </div>
         </div>
         </div>
 
         <div class="container services">
-        <div class="row">
-            <div class="col-lg-4">
-            <!--<img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            -->
-            <h2><ion-icon name="leaf-sharp"></ion-icon><br />Terapias</h2>
-            <p>Terapias amables con profesionales respetuosos con la sabiduría natural del ser humano.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <div class="row">
+                {{ range .Params.services }}
+                    <div class="col-lg-4">
+                        <h2><ion-icon name="{{ .icon }}"></ion-icon><br />{{ .name }}</h2>
+                        <p>{{ .text }}</p>
+                        <p><a class="btn btn-secondary" href="#" role="button">{{ .action }} &raquo;</a></p>
+                    </div>
+                {{ end }}
             </div>
-            <div class="col-lg-4">
-            <h2><ion-icon name="calendar-sharp"></ion-icon><br />Cursos</h2>
-            <p>Cursos, talleres y encuentros de crecimiento personal en lo físico, mental y espiritual.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-            <h2><ion-icon name="home-sharp"></ion-icon><br />Espacios</h2>
-            <p>Espacios en alquiler habilitados para terapias individuales y en grupo para profesionales conscientes.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">Más información &raquo;</a></p>
-            </div>
-        </div>
 
-        <hr class="featurette-divider">
+            <hr class="featurette-divider">
 
-        <div class="row featurette">
-            <div class="col-md-7">
-            <h2 class="featurette-heading">Cuidamos tu bienestar con terapias naturales amables.</h2>
-            <p class="lead">Te acompañamos a restablecer tu equilibrio natural para mejorar tu estado físico, mental y espiritual lo que revierte en tu calidad de vida.</p>
-            <p>Las terapias naturales amables son aquellas en las que el profesional respeta la sabiduría natural del organismo y las leyes de la naturaleza del entorno, son terapias en las que el amor y el respeto a la persona es parte fundamental de la técnica.</p>
-            <p>Todas las terapias son complementarias a otros tratamientos naturales o alopáticos que precises.</p>
-            <p>Cada profesional utiliza sus mejores conocimientos y técnicas para acompañarte lo mejor posible.</p>
+            <div class="row featurette">
+                <div class="col-md-7">
+                <h2 class="featurette-heading">Cuidamos tu bienestar con terapias naturales amables.</h2>
+                <p class="lead">Te acompañamos a restablecer tu equilibrio natural para mejorar tu estado físico, mental y espiritual lo que revierte en tu calidad de vida.</p>
+                <p>Las terapias naturales amables son aquellas en las que el profesional respeta la sabiduría natural del organismo y las leyes de la naturaleza del entorno, son terapias en las que el amor y el respeto a la persona es parte fundamental de la técnica.</p>
+                <p>Todas las terapias son complementarias a otros tratamientos naturales o alopáticos que precises.</p>
+                <p>Cada profesional utiliza sus mejores conocimientos y técnicas para acompañarte lo mejor posible.</p>
+                </div>
+                <div class="col-md-5">
+                <img class="featurette-image img-fluid mx-auto" src="img/500x500/test1.jpg" alt="Generic placeholder image">
+                </div>
             </div>
-            <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="img/500x500/test1.jpg" alt="Generic placeholder image">
-            </div>
-        </div>
 
-        <hr class="featurette-divider">
+            <hr class="featurette-divider">
 
-        <div class="row featurette">
+            <div class="row featurette">
             <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading">Cultivamos tu bienser y acompañamos tu desarrollo personal con conocimientos amables para alcanzar tu bienestar.</h2>
             <p class="lead">Te ofrecemos cursos, talleres y encuentros de crecimiento personal en lo físico, mental y espiritual para que la persona tenga herramientas en su día a día.</p>
@@ -67,9 +57,9 @@
             <div class="col-md-5 order-md-1">
             <img class="featurette-image img-fluid mx-auto" src="img/500x500/test1.jpg" alt="Generic placeholder image">
             </div>
-        </div>
+            </div>
 
-        <!-- /END THE FEATURETTES -->
+            <!-- /END THE FEATURETTES -->
 
         </div><!-- /.container -->
     </main>
