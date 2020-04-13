@@ -1,4 +1,6 @@
 baseURL = "http://example.org/"
-languageCode = "es"
 title = "Aqualumen"
+author = "Raul Garcia Alcazar"
 theme = "aqua"
+languageCode = "es"
+DefaultContentLanguage = "es"
