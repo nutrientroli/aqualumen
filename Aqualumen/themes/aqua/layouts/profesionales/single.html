@@ -1,4 +1,20 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }} 
-
+<main role="main">
+    {{ if isset .Params "banner_image" }} 
+        {{ $base := .Site.BaseURL }}
+        {{ $image := .Params.banner_image }}
+        {{ $url_image := print $base "/" $image }}
+        {{ partial "banner.html" (dict "title" .Params.fullname "text" (delimit .Params.contact ", ") "image" $url_image) }}  
+    {{ else }}
+        {{ partial "banner.html" (dict "title" .Params.fullname "text" (delimit .Params.contact ", ")) }}  
+    {{ end }}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</main>
 {{ partial "footer.html" . }}

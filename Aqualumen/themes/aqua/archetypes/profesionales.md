@@ -6,7 +6,9 @@ draft: false
 
 fullname: ""
 therapies:
-    example: "url"
+    1: 
+        url: "url"
+        name: ""
 
 profile_pic: ""
 contact:

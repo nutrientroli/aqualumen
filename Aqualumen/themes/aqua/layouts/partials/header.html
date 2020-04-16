@@ -2,6 +2,11 @@
 <html lang="es">
 <head>
     {{ partial "head.html" . }}
-    <title>{{ .Title }}</title>
+    
+    {{ if .IsHome }}
+    <title>{{ .Site.Title }}</title>
+    {{ else }}
+    <title>{{ .Site.Title }} - {{ .Title }}</title>
+    {{ end }}
 </head>
 <body>

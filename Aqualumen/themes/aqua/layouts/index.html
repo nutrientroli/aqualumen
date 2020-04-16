@@ -11,13 +11,14 @@
                     <h1>{{ .Params.banner.title }}</h1>
                     <p class="lead text-muted">{{ .Params.banner.text }}</p>
                     <p>
-                        <a href="#" class="btn btn-primary my-2">{{ .Params.banner.action }} &raquo;</a>
+                        <a href="{{ .Site.BaseURL }}{{ .Params.banner.actionlink }}" class="btn btn-primary my-2">{{ .Params.banner.action }} &raquo;</a>
                     </p>
                 </div>
             </div>
         </div>
         </div>
 
+        <!--services-->
         <div class="container services">
             <div class="row">
                 {{ range .Params.services }}
@@ -28,40 +29,36 @@
                     </div>
                 {{ end }}
             </div>
+        </div>
 
+        <!--featurettes-->
+        <div class="container">
+            {{ range .Params.featurettes }}
             <hr class="featurette-divider">
 
             <div class="row featurette">
+                {{ $typeCond := "left" }}
+                {{ if  eq .type $typeCond }}
+                <div class="col-md-7 order-md-2">
+                {{ else }}
                 <div class="col-md-7">
-                <h2 class="featurette-heading">Cuidamos tu bienestar con terapias naturales amables.</h2>
-                <p class="lead">Te acompañamos a restablecer tu equilibrio natural para mejorar tu estado físico, mental y espiritual lo que revierte en tu calidad de vida.</p>
-                <p>Las terapias naturales amables son aquellas en las que el profesional respeta la sabiduría natural del organismo y las leyes de la naturaleza del entorno, son terapias en las que el amor y el respeto a la persona es parte fundamental de la técnica.</p>
-                <p>Todas las terapias son complementarias a otros tratamientos naturales o alopáticos que precises.</p>
-                <p>Cada profesional utiliza sus mejores conocimientos y técnicas para acompañarte lo mejor posible.</p>
+                {{ end }}
+                    <h2 class="featurette-heading">{{ .title }}</h2>
+                    <p class="lead">{{ .subtitle }}</p>
+                    {{ range .text }}
+                        <p>{{ . }}</p>
+                    {{ end }}
                 </div>
+                {{ if  eq .type $typeCond }}
+                <div class="col-md-5 order-md-1">
+                {{ else }}
                 <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" src="img/500x500/test1.jpg" alt="Generic placeholder image">
+                {{ end }}
+                    <img class="featurette-image img-fluid mx-auto" src="{{ .image }}" alt="Generic placeholder image">
                 </div>
             </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Cultivamos tu bienser y acompañamos tu desarrollo personal con conocimientos amables para alcanzar tu bienestar.</h2>
-            <p class="lead">Te ofrecemos cursos, talleres y encuentros de crecimiento personal en lo físico, mental y espiritual para que la persona tenga herramientas en su día a día.</p>
-            <p>Cuidar es la acción de poner energía en algo que nos importa. ¿Te importa tu estado físico, mental y espiritual? La salud es el equilibrio entre el ser humano y su entorno. Siempre requiere de una implicación personal activa y actitud consciente.</p>
-            <p>Te ayudamos a cultivar el conocimiento del ser para favorecer la reconexión con tus capacidades innatas y naturales, y así desarrollar tu autocuidado personal consciente en todos los ámbitos de tu vida, desde la concepción hasta la muerte.</p>
-            <p>Como somos seres sociales, otro servicio es la consultoría en el cuidado de las relaciones humanas y el mantenimiento del equilibrio armónico y funcional de grupos. Te acompañamos en la mejora de relaciones familiares, de pareja, escolares, deportivas, de organizaciones y empresas.</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" src="img/500x500/test1.jpg" alt="Generic placeholder image">
-            </div>
-            </div>
-
-            <!-- /END THE FEATURETTES -->
-
-        </div><!-- /.container -->
+            {{ end }}
+        </div>
     </main>
 
 {{ partial "footer.html" . }}

@@ -1,3 +1,27 @@
+    
+    
+    
+    <footer class="container">
+        <hr class="footer-divider">
+        <div class="row">
+          <div class="col-md-3">
+            <h4>{{ .Site.Params.Footer.contact_title }}</h4>
+            <p>{{ .Site.Params.Contact.address_1 }}<br />{{ .Site.Params.Contact.address_2 }}<br /><ion-icon name="{{ .Site.Params.Footer.phone_icon }}"></ion-icon> {{ .Site.Params.Contact.phone }}<br /><ion-icon name="{{ .Site.Params.Footer.email_icon }}"></ion-icon> {{ .Site.Params.Contact.email }}</p>
+            <p>Horario: visitas concertadas.</p>
+          </div>
+          <div class="col-md-6">
+            <h4>{{ .Site.Params.Footer.Faqs.title }}</h4>
+            <p><strong>{{ .Site.Params.Footer.Faqs.q1 }}</strong><br />{{ .Site.Params.Footer.Faqs.a1 }}</p>
+            <p><strong>{{ .Site.Params.Footer.Faqs.q2 }}</strong><br />{{ .Site.Params.Footer.Faqs.a2 }}</p>
+          </div>
+          <div class="col-md-3">
+              <img class="center-block" src="{{.Site.BaseURL}}{{ .Site.Params.Footer.logo }}" alt="Generic placeholder image" width="50%">
+          </div>
+        </div>
+        <p class="float-right"><a href="#">{{ .Site.Params.Footer.return_top }}</a></p>
+        <p>&copy; {{.Site.Title}} &middot; <a href="{{.Site.BaseURL}}{{ .Site.Params.Footer.privacity_url }}">{{ .Site.Params.Footer.privacity_title }}</a> &middot; <a href="{{.Site.BaseURL}}{{ .Site.Params.Footer.terms_url }}">{{ .Site.Params.Footer.terms_title }}</a></p>
+    </footer>
+    
     <script src="{{.Site.BaseURL}}plugins/js/jquery-3.4.1.slim.min.js"></script>
     <script src="{{.Site.BaseURL}}plugins/js/bootstrap.min.js"></script>
 </body>

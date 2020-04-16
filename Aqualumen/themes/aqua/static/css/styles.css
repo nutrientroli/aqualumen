@@ -60,7 +60,7 @@ body {
     margin-left: .75rem;
   }
   
-  .featurette-divider {
+  .featurette-divider, .footer-divider {
     margin: 3rem 0;
   }
   

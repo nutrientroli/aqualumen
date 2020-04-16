@@ -1,4 +1,48 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }} 
-
+<main role="main">
+    {{ partial "banner.html" .Params.banner }}  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{ .Content }}
+            </div>
+        </div>
+ 
+        <div class="row">
+            <div class="col-md-12">
+                {{ .Content }}
+                {{ range .Pages }}
+                    <div class="row team-preview-profile">
+                        <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3">
+                          <div class="row">
+                            <div class="col-md-12">
+                                <a href="{{ .Permalink }}"><img class="rounded-circle mx-auto d-block" src="{{.Site.BaseURL}}{{ .Params.profilepic }}" alt="" width="140" height="140"></a>
+                            </div>
+                            <div class="col-md-12 text-center">
+                              <p><ion-icon name="logo-whatsapp"></ion-icon> {{ .Params.contact.phone }}<br /><ion-icon name="mail-sharp"></ion-icon> {{ .Params.contact.email }}<br /><ion-icon name="globe-sharp"></ion-icon> {{ .Params.contact.site }}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-7 col-lg-8 col-xl-9">
+                            <a href="{{ .Permalink }}"><h2 class="featurette-heading">{{ .Params.fullname }}</h2></a>
+                           
+                            {{ $check := false }}
+                            {{ range .Params.therapies }}
+                                {{ if $check }}
+                                <span class="lead">&middot;</span>
+                                {{ end }}
+                                <a href="{{ .url }}"><span class="lead">{{ .name }}</span></a>
+                                {{ $check = true }}
+                            {{ end }}
+                            {{ range .Params.preview }}
+                                <p>{{ . }}</p>
+                            {{ end }}
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</main>
 {{ partial "footer.html" . }}
